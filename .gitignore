@@ -1,4 +1,4 @@
-﻿# Flutter/Dart
+﻿# Flutter
 .dart_tool/
 .flutter-plugins
 .flutter-plugins-dependencies
@@ -6,17 +6,13 @@
 .pub-cache/
 .pub/
 build/
-ios/Flutter/App.framework
-ios/Flutter/Flutter.framework
-ios/Flutter/Flutter.podspec
-ios/Pods/
+ios/Flutter/
 android/.gradle/
 android/captures/
 android/gradlew
 android/gradlew.bat
 android/local.properties
 android/**/GeneratedPluginRegistrant.java
-android/**/GeneratedPluginRegistrant.kt
 
 # IDE
 .idea/
@@ -26,24 +22,17 @@ android/**/GeneratedPluginRegistrant.kt
 *.iws
 .DS_Store
 
-# Build outputs
+# Build
 *.apk
 *.aab
 *.exe
 *.dll
 *.so
-*.dylib
 
-# Temporary files
-*.log
-*.tmp
-*.temp
+# Generated
+*.g.dart
 
 # Sensitive
 *.keystore
 *.jks
-*.p12
-*.pem
 .env
-.env.local
-*.secret
