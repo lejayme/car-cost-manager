@@ -1,0 +1,49 @@
+﻿# Flutter/Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+ios/Flutter/App.framework
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Pods/
+android/.gradle/
+android/captures/
+android/gradlew
+android/gradlew.bat
+android/local.properties
+android/**/GeneratedPluginRegistrant.java
+android/**/GeneratedPluginRegistrant.kt
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+.DS_Store
+
+# Build outputs
+*.apk
+*.aab
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Temporary files
+*.log
+*.tmp
+*.temp
+
+# Sensitive
+*.keystore
+*.jks
+*.p12
+*.pem
+.env
+.env.local
+*.secret
