@@ -18,7 +18,7 @@
 - 📊 **透明化**：每一笔开销清晰可查
 - 📈 **数据化**：用数据驱动用车决策
 - 💰 **省钱**：发现不必要的开支，优化成本
-- 🔄 **同步**：多端数据实时同步
+- 🔄 **同步**：多端数据实时同步（规划中）
 
 ---
 
@@ -32,12 +32,15 @@
 ├─────────────────────────────────────────────────────────────┤
 │  ┌─────────────┐  ┌─────────────┐  ┌─────────────────────┐  │
 │  │  记录模块   │  │  分析模块   │  │    设置与管理       │  │
+│  │  ✅ 已实现  │  │  ✅ 已实现  │  │    ✅ 已实现        │  │
 │  │             │  │             │  │                     │  │
-│  │ • 添加开销  │  │ • 日报/月报 │  │ • 车辆管理         │  │
-│  │ • 编辑/删除 │  │ • 图表分析  │  │ • 分类管理         │  │
-│  │ • 拍照上传  │  │ • 趋势对比  │  │ • 数据备份/恢复    │  │
-│  │ • 快速记账  │  │ • 成本排行  │  │ • 多车支持         │  │
+│  │ ✅ 添加开销 │  │ ✅ 日/月统计│  │ ✅ 车辆信息管理    │  │
+│  │ ✅ 编辑删除 │  │ ✅ 图表分析 │  │ ✅ 数据导出导入    │  │
+│  │ ⏳ 拍照上传 │  │ ✅ 趋势图表 │  │ ⏳ 多车支持        │  │
+│  │ ⏳ 快速记账 │  │ ✅ 分类占比 │  │ ⏳ 云端同步        │  │
+│  │ ⏳ 定期开销 │  │ ⏳ 成本排行 │  │ ⏳ 预算设置        │  │
 │  └─────────────┘  └─────────────┘  └─────────────────────┘  │
+│  ✅ = 已实现    ⏳ = 规划中                                  │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -45,160 +48,170 @@
 
 #### 📝 模块一：开销记录
 
-| 功能 | 描述 | 优先级 |
-|------|------|--------|
-| 添加开销 | 记录金额、类型、日期、备注、里程数 | P0 |
-| 开销分类 | 充电费、停车费、加油费、保险、保养、维修、洗车、过路费、违章罚款、其他 | P0 |
-| 快速记账 | 一键记录常用开销（预设模板） | P1 |
-| 拍照上传 | 拍摄发票/收据，OCR 自动识别金额 | P1 |
-| 定期开销 | 设置周期性自动记录（如月保、保险） | P2 |
-| 批量导入 | Excel/CSV 导入历史数据 | P2 |
+| 功能 | 描述 | 优先级 | 状态 |
+|------|------|--------|------|
+| 添加开销 | 记录金额、类型、日期、里程数 | P0 | ✅ 已实现 |
+| 开销分类 | 充电费、停车费、加油费、保险、保养、维修、洗车、过路费、违章罚款、其他 | P0 | ✅ 已实现 |
+| 编辑/删除 | 修改或移除已有记录 | P0 | ✅ 已实现 |
+| 快速记账 | 一键记录常用开销（预设模板） | P1 | ⏳ 规划中 |
+| 拍照上传 | 拍摄发票/收据，OCR 自动识别金额 | P1 | ⏳ 规划中 |
+| 定期开销 | 设置周期性自动记录（如月保、保险） | P2 | ⏳ 规划中 |
+| 批量导入 | Excel/CSV 导入历史数据 | P2 | ⏳ 规划中 |
 
 #### 📊 模块二：数据分析
 
-| 功能 | 描述 | 优先级 |
-|------|------|--------|
-| 今日成本 | 实时显示当天总开销 | P0 |
-| 日均成本 | 自定义时间段内的平均每日成本 | P0 |
-| 月度汇总 | 每月总开销及分类占比 | P0 |
-| 趋势图表 | 折线图展示成本变化趋势 | P1 |
-| 分类占比 | 饼图展示各类开销比例 | P1 |
-| 成本排行 | 按金额/频次排序开销项目 | P1 |
-| 里程统计 | 每公里成本、油耗/电耗分析 | P2 |
-| 年度对比 | 同比/环比数据分析 | P2 |
+| 功能 | 描述 | 优先级 | 状态 |
+|------|------|--------|------|
+| 总成本统计 | 显示累计总开销 | P0 | ✅ 已实现 |
+| 日均成本 | 平均每日用车成本 | P0 | ✅ 已实现 |
+| 每公里成本 | 平均每公里开销 | P0 | ✅ 已实现 |
+| 趋势图表 | 日/周/月/年视图，成本累积曲线 | P1 | ✅ 已实现 |
+| 分类占比 | 饼图展示各类开销比例 | P1 | ✅ 已实现 |
+| 能耗分析 | 燃油/充电费用、每公里能耗成本 | P1 | ✅ 已实现 |
+| 成本排行 | 按金额/频次排序开销项目 | P1 | ⏳ 规划中 |
+| 年度对比 | 同比/环比数据分析 | P2 | ⏳ 规划中 |
 
 #### ⚙️ 模块三：设置与管理
 
-| 功能 | 描述 | 优先级 |
-|------|------|--------|
-| 车辆管理 | 支持多辆车，切换查看 | P1 |
-| 分类自定义 | 添加/编辑/删除开销分类 | P1 |
-| 数据同步 | 云端同步（账号登录） | P1 |
-| 数据导出 | 导出 Excel/PDF 报告 | P2 |
-| 数据备份 | 本地/云端备份与恢复 | P1 |
-| 预算设置 | 设置月度/年度预算，超支提醒 | P2 |
-| 提醒功能 | 保险到期、保养提醒 | P2 |
+| 功能 | 描述 | 优先级 | 状态 |
+|------|------|--------|------|
+| 车辆信息管理 | 设置车辆名称、起始日期、购车价格 | P1 | ✅ 已实现 |
+| 数据导出 | 导出 JSON 格式数据文件 | P1 | ✅ 已实现 |
+| 数据导入 | 导入 JSON 数据，兼容旧版格式 | P1 | ✅ 已实现 |
+| 清空数据 | 重置所有记录 | P1 | ✅ 已实现 |
+| 多车支持 | 支持多辆车，切换查看 | P1 | ⏳ 规划中 |
+| 云端同步 | 云端备份与同步（账号登录） | P1 | ⏳ 规划中 |
+| 预算设置 | 设置月度/年度预算，超支提醒 | P2 | ⏳ 规划中 |
+| 提醒功能 | 保险到期、保养提醒 | P2 | ⏳ 规划中 |
 
 ---
 
 ## 3. 数据结构设计
 
-### 3.1 核心数据表
+### 3.1 当前数据模型（v1.0.0 已实现）
+
+#### Expense（开销记录）
+```dart
+class Expense {
+  int? id;
+  String date;        // 日期 (yyyy-MM-dd)
+  String type;        // 费用类型
+  double amount;      // 金额
+  double mileage;     // 里程
+}
+```
+
+#### CarInfo（车辆信息）
+```dart
+class CarInfo {
+  int? id;
+  String name;            // 车辆名称
+  String startDate;       // 用车起始日期
+  double? purchasePrice;  // 购车价格
+}
+```
+
+#### EnergyRecord（能耗记录）
+```dart
+class EnergyRecord {
+  int? id;
+  String date;        // 日期
+  String energyType;  // fuel / electricity
+  double price;       // 单价
+  double quantity;    // 数量（升/度）
+  double totalCost;   // 总花费
+}
+```
+
+### 3.2 规划数据模型（v2.0 目标）
 
 ```sql
--- 车辆表
+-- 车辆表（多车支持）
 CREATE TABLE vehicles (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT NOT NULL,           -- 车辆名称（如：我的特斯拉）
-    brand TEXT,                    -- 品牌
-    model TEXT,                    -- 型号
-    license_plate TEXT,            -- 车牌号
-    vin TEXT,                      -- 车架号
-    purchase_date DATE,            -- 购买日期
-    purchase_price REAL,           -- 购买价格
-    current_mileage REAL,          -- 当前里程
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+    name TEXT NOT NULL,
+    brand TEXT,
+    model TEXT,
+    license_plate TEXT,
+    purchase_date DATE,
+    purchase_price REAL,
+    current_mileage REAL
 );
 
--- 开销分类表
+-- 开销分类表（自定义分类）
 CREATE TABLE categories (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT NOT NULL UNIQUE,     -- 分类名称
-    icon TEXT,                     -- 图标
-    color TEXT,                    -- 颜色
-    parent_id INTEGER,             -- 父分类 ID（支持多级）
-    is_default BOOLEAN DEFAULT 1,  -- 是否系统默认
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+    name TEXT NOT NULL UNIQUE,
+    icon TEXT,
+    color TEXT,
+    is_default BOOLEAN DEFAULT 1
 );
 
--- 开销记录表
-CREATE TABLE expenses (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    vehicle_id INTEGER NOT NULL,   -- 关联车辆
-    category_id INTEGER NOT NULL,  -- 关联分类
-    amount REAL NOT NULL,          -- 金额
-    mileage REAL,                  -- 当时里程数
-    date DATE NOT NULL,            -- 日期
-    location TEXT,                 -- 地点
-    notes TEXT,                    -- 备注
-    receipt_image TEXT,            -- 发票图片路径
-    payment_method TEXT,           -- 支付方式
-    is_recurring BOOLEAN DEFAULT 0,-- 是否周期性
-    recurring_rule TEXT,           -- 周期规则（JSON）
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (vehicle_id) REFERENCES vehicles(id),
-    FOREIGN KEY (category_id) REFERENCES categories(id)
-);
-
--- 用户表（云端同步用）
+-- 用户表（云端同步）
 CREATE TABLE users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     username TEXT UNIQUE NOT NULL,
     email TEXT,
-    phone TEXT,
-    avatar TEXT,
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+    phone TEXT
 );
 ```
 
-### 3.2 默认分类数据
+### 3.3 默认费用分类
 
-```json
-{
-  "categories": [
-    { "id": 1, "name": "充电费", "icon": "⚡", "color": "#FFD700" },
-    { "id": 2, "name": "加油费", "icon": "⛽", "color": "#FF6B6B" },
-    { "id": 3, "name": "停车费", "icon": "🅿️", "color": "#4ECDC4" },
-    { "id": 4, "name": "过路费", "icon": "🛣️", "color": "#95E1D3" },
-    { "id": 5, "name": "保险费", "icon": "🛡️", "color": "#A8E6CF" },
-    { "id": 6, "name": "保养费", "icon": "🔧", "color": "#DCEDC1" },
-    { "id": 7, "name": "维修费", "icon": "🔨", "color": "#FFEAA7" },
-    { "id": 8, "name": "洗车费", "icon": "🚿", "color": "#DDA0DD" },
-    { "id": 9, "name": "违章罚款", "icon": "📋", "color": "#FF8C94" },
-    { "id": 10, "name": "装饰改装", "icon": "🎨", "color": "#B5EAD7" },
-    { "id": 11, "name": "其他", "icon": "📦", "color": "#C7CEEA" }
-  ]
-}
-```
+| 分类 | 图标 | 说明 |
+|------|------|------|
+| 充电费 | ⚡ | 电动汽车充电支出 |
+| 加油费 | ⛽ | 燃油车加油支出 |
+| 停车费 | 🅿️ | 停车场费用 |
+| 过路费 | 🛣️ | 高速公路通行费 |
+| 保险费 | 🛡️ | 车辆保险支出 |
+| 保养费 | 🔧 | 定期保养维护 |
+| 维修费 | 🔨 | 车辆维修支出 |
+| 洗车费 | 🚿 | 洗车服务费用 |
+| 违章罚款 | 📋 | 交通违章处罚 |
+| 其他 | 📦 | 其他杂项支出 |
 
 ---
 
 ## 4. 技术选型
 
-### 4.1 跨平台方案对比
+### 4.1 已采用技术栈（v1.0.0）
 
-| 方案 | 优势 | 劣势 | 推荐度 |
-|------|------|------|--------|
-| **Flutter** | 一套代码多端运行，性能好，UI 一致 | Windows 支持稍弱 | ⭐⭐⭐⭐ |
-| **React Native + RNW** | 生态丰富，Web 技术栈 | Windows 支持需额外配置 | ⭐⭐⭐ |
-| **.NET MAUI** | 微软官方支持，Windows 原生体验好 | Android 性能一般 | ⭐⭐⭐⭐ |
-| **Electron + Android WebView** | 开发简单 | 性能较差，包体积大 | ⭐⭐ |
-| **Kotlin Multiplatform** | 原生性能，代码共享 | 学习曲线陡 | ⭐⭐⭐ |
+| 技术 | 版本 | 说明 |
+|------|------|------|
+| Flutter | 3.11+ | 跨平台 UI 框架 |
+| Dart | 3.11+ | 编程语言 |
+| SQLite (sqflite) | 2.3.0 | 本地数据存储 |
+| Provider | 6.1.0 | 状态管理 |
+| fl_chart | 0.66.0 | 图表可视化 |
+| sqflite_common_ffi | 2.3.0 | Windows SQLite 支持 |
+| intl | 0.18.0 | 国际化与日期格式化 |
+| file_picker | 6.1.0 | 文件选择 |
+| share_plus | 7.2.0 | 文件分享 |
+| excel | 4.0.0 | Excel 导出支持 |
 
-### 4.2 推荐技术栈
+### 4.2 技术架构
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                    推荐技术架构                              │
+│                    技术架构                                  │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
-│  前端框架：Flutter 3.x                                      │
-│  ├─ Android: 原生编译                                       │
-│  └─ Windows: Flutter Windows Desktop                        │
+│  前端框架：Flutter 3.11+                                    │
+│  ├─ Windows: Flutter Windows Desktop                        │
+│  └─ Android: 原生编译                                       │
 │                                                             │
-│  状态管理：Riverpod / Bloc                                  │
+│  状态管理：Provider                                         │
 │                                                             │
-│  本地数据库：Isar / Hive (轻量) 或 SQLite (成熟)            │
+│  本地数据库：SQLite (sqflite)                               │
+│  ├─ Android: sqflite                                        │
+│  └─ Windows: sqflite_common_ffi                             │
 │                                                             │
-│  云端同步：                                                 │
-│  ├─ 方案 A: 自建后端 (Node.js + PostgreSQL)                 │
-│  ├─ 方案 B: Firebase / Supabase                            │
-│  └─ 方案 C: 仅本地 + 文件导出 (MVP 版本)                    │
+│  图表可视化：fl_chart                                       │
 │                                                             │
-│  图表库：fl_chart / syncfusion_flutter_charts               │
+│  数据导出：JSON / Excel                                     │
 │                                                             │
-│  图片处理：image_picker + google_mlkit_text_recognition     │
+│  云端同步（规划）：Firebase / Supabase                      │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
 ```
@@ -208,196 +221,155 @@ CREATE TABLE users (
 ```
 car_cost_manager/
 ├── lib/
-│   ├── main.dart
-│   ├── app.dart
-│   ├── config/
-│   │   ├── routes.dart
-│   │   └── theme.dart
-│   ├── models/
-│   │   ├── expense.dart
-│   │   ├── vehicle.dart
-│   │   └── category.dart
-│   ├── providers/
-│   │   ├── expense_provider.dart
-│   │   └── vehicle_provider.dart
-│   ├── screens/
-│   │   ├── home/
-│   │   ├── expenses/
-│   │   ├── analysis/
-│   │   └── settings/
-│   ├── widgets/
-│   │   ├── expense_card.dart
-│   │   ├── charts/
-│   │   └── common/
-│   ├── services/
-│   │   ├── database.dart
-│   │   ├── sync.dart
-│   │   └── ocr.dart
-│   └── utils/
-│       ├── formatters.dart
-│       └── validators.dart
-├── assets/
-│   ├── images/
-│   └── icons/
-├── android/
-├── windows/
-└── test/
+│   ├── main.dart                 # 应用入口
+│   ├── models/                   # 数据模型
+│   │   ├── expense.dart          # 开销记录 ✅
+│   │   ├── expense_category.dart # 费用分类 ✅
+│   │   ├── energy_record.dart    # 能耗记录 ✅
+│   │   └── car_info.dart         # 车辆信息 ✅
+│   ├── providers/                # 状态管理
+│   │   └── expense_provider.dart # ✅
+│   ├── screens/                  # 页面
+│   │   ├── home_screen.dart      # 主页概览 ✅
+│   │   ├── expense_list_screen.dart # 记录列表 ✅
+│   │   ├── chart_screen.dart     # 趋势图表 ✅
+│   │   ├── category_stats_screen.dart # 分类统计 ✅
+│   │   ├── energy_analysis_screen.dart # 能耗分析 ✅
+│   │   └ settings_screen.dart    # 设置页面 ✅
+│   ├── widgets/                  # UI组件
+│   │   ├── stat_card.dart        # 统计卡片 ✅
+│   │   └ expense_form.dart       # 记录表单 ✅
+│   ├── services/                 # 服务层
+│   │   ├── database_service.dart # 数据库操作 ✅
+│   │   ├── export_service.dart   # 导出服务 ✅
+│   │   └ import_service.dart     # 导入服务 ✅
+│   └── utils/                    # 工具类
+├── android/                      # Android 平台配置
+├── windows/                      # Windows 平台配置
+└── test/                         # 测试目录
 ```
 
 ---
 
-## 5. UI/UX 设计
+## 5. 数据导出导入
 
-### 5.1 页面结构
+### 5.1 导出格式（v2.0）
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                      应用导航结构                            │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  ┌─────────────┐                                           │
-│  │   首页      │ ← 底部导航                                 │
-│  │  (今日概览) │   [首页] [记账] [分析] [我的]              │
-│  └─────────────┘                                           │
-│         │                                                   │
-│         ▼                                                   │
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐         │
-│  │  记账页面   │  │  分析页面   │  │  我的页面   │         │
-│  │             │  │             │  │             │         │
-│  │ • 快速记账  │  │ • 图表分析  │  │ • 车辆管理  │         │
-│  │ • 选择分类  │  │ • 数据报表  │  │ • 数据备份  │         │
-│  │ • 添加备注  │  │ • 导出分享  │  │ • 设置      │         │
-│  └─────────────┘  └─────────────┘  └─────────────┘         │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
-
-### 5.2 首页设计
-
-```
-┌─────────────────────────────────────┐
-│  🚗 CarCost              🔔 👤      │
-├─────────────────────────────────────┤
-│                                     │
-│  ┌───────────────────────────────┐  │
-│  │     今日支出                   │  │
-│  │     ¥ 128.50                  │  │
-│  │     共 3 笔                    │  │
-│  └───────────────────────────────┘  │
-│                                     │
-│  ┌───────────────────────────────┐  │
-│  │  本月支出          预算       │  │
-│  │  ¥ 2,458.00       ¥ 3,000    │  │
-│  │  ████████░░ 82%              │  │
-│  └───────────────────────────────┘  │
-│                                     │
-│  最近记录                            │
-│  ┌───────────────────────────────┐  │
-│  │ ⚡ 充电费    ¥ 85.00   14:30  │  │
-│  │ 🅿️ 停车费    ¥ 30.00   12:15  │  │
-│  │ ⛽ 加油费    ¥ 350.00  昨天   │  │
-│  └───────────────────────────────┘  │
-│                                     │
-│           [+ 快速记账]               │
-│                                     │
-├─────────────────────────────────────┤
-│  🏠      📝      📊      👤        │
-│  首页    记账    分析    我的       │
-└─────────────────────────────────────┘
+```json
+{
+  "version": "2.0",
+  "exportTime": "2026-03-28T10:00:00Z",
+  "appVersion": "1.0.0",
+  "data": {
+    "carInfo": {
+      "name": "我的车",
+      "startDate": "2026-01-01",
+      "purchasePrice": 150000
+    },
+    "expenses": [
+      {
+        "date": "2026-03-28",
+        "type": "加油费",
+        "amount": 350.0,
+        "mileage": 12345.0
+      }
+    ],
+    "energyRecords": [...]
+  }
+}
 ```
 
-### 5.3 分析页面设计
+### 5.2 兼容性
 
-```
-┌─────────────────────────────────────┐
-│  ← 数据分析                         │
-├─────────────────────────────────────┤
-│                                     │
-│  [日] [周] [月] [年] [自定义]        │
-│                                     │
-│  ┌───────────────────────────────┐  │
-│  │     日均成本：¥ 82.50         │  │
-│  │     总支出：¥ 2,475.00        │  │
-│  └───────────────────────────────┘  │
-│                                     │
-│  分类占比                            │
-│  ┌───────────────────────────────┐  │
-│  │         🥧 饼图               │  │
-│  │                               │  │
-│  │  ⛽ 加油 45%   ⚡ 充电 20%    │  │
-│  │  🅿️ 停车 15%   🛣️ 过路 10%   │  │
-│  │  其他 10%                     │  │
-│  └───────────────────────────────┘  │
-│                                     │
-│  趋势分析                            │
-│  ┌───────────────────────────────┐  │
-│  │     📈 折线图                 │  │
-│  │  1 月  2 月  3 月  4 月  5 月    │  │
-│  └───────────────────────────────┘  │
-│                                     │
-│  [导出报表]  [分享]                  │
-│                                     │
-└─────────────────────────────────────┘
-```
+- ✅ 支持导入旧版 HTML 应用的 JSON 数据格式
+- ✅ 自动转换为新版数据结构
 
 ---
 
 ## 6. 开发计划
 
-### 6.1 阶段划分
+### 6.1 版本里程碑
 
-| 阶段 | 周期 | 目标 | 交付物 |
-|------|------|------|--------|
-| **MVP** | 4 周 | 核心记账 + 基础统计 | Android APK |
-| **V1.0** | 8 周 | 完整功能 + Windows 版 | Android + Windows |
-| **V1.5** | 12 周 | 云端同步 + OCR | 全平台 + 云服务 |
-| **V2.0** | 16 周 | 多车支持 + 智能分析 | 完整商用版 |
+| 版本 | 日期 | 状态 | 目标 |
+|------|------|------|------|
+| **v1.0.0** | 2026-03-28 | ✅ 已完成 | 基础记账 + 本地统计 + 数据导入导出 |
+| **v1.5.0** | 规划中 | ⏳ | 多车支持 + 快速记账模板 + 分类自定义 |
+| **v2.0.0** | 规划中 | ⏳ | 云端同步 + OCR 发票识别 + 预算提醒 |
 
-### 6.2 MVP 功能清单（4 周）
+### 6.2 v1.0.0 已完成功能
 
+- ✅ Flutter 项目搭建
+- ✅ SQLite 数据库设计与实现
+- ✅ 开销记录管理（添加/编辑/删除）
+- ✅ 主页统计概览
+- ✅ 趋势图表（日/周/月/年视图）
+- ✅ 分类统计（饼图）
+- ✅ 能耗分析
+- ✅ 车辆信息管理
+- ✅ 数据导入导出（JSON）
+- ✅ Windows + Android 双平台支持
+
+### 6.3 v1.5.0 规划功能
+
+- ⏳ 多车支持
+- ⏳ 快速记账模板
+- ⏳ 自定义费用分类
+- ⏳ 成本排行榜
+- ⏳ Excel 导出增强
+
+### 6.4 v2.0.0 规划功能
+
+- ⏳ 云端同步（Firebase / Supabase）
+- ⏳ OCR 发票识别
+- ⏳ 预算设置与超支提醒
+- ⏳ 保险/保养到期提醒
+- ⏳ 年度对比分析
+
+---
+
+## 7. 构建与运行
+
+### 7.1 环境要求
+
+- Flutter SDK 3.11.4+
+- Dart SDK 3.11.4+
+- Windows: Visual Studio 2022（C++ 桌面开发工具）
+- Android: Android SDK + Android Studio
+
+### 7.2 开发运行
+
+```bash
+# 安装依赖
+flutter pub get
+
+# Windows 开发
+flutter run -d windows
+
+# Android 开发
+flutter run -d android
 ```
-Week 1: 项目搭建 + 数据库设计
-├── Flutter 环境配置
-├── 数据库表创建
-└── 基础 UI 组件
 
-Week 2: 核心记账功能
-├── 添加/编辑/删除开销
-├── 分类选择
-└── 列表展示
+### 7.3 发布构建
 
-Week 3: 数据统计
-├── 今日/本月统计
-├── 分类占比饼图
-└── 简单列表
+```bash
+# Windows 发布版
+flutter build windows --release
 
-Week 4: 测试 + 打包
-├── 功能测试
-├── UI 优化
-└── Android 打包
+# Android APK
+flutter build apk --release
 ```
 
 ---
 
-## 7. 风险与挑战
+## 8. 风险与挑战
 
 | 风险 | 影响 | 应对措施 |
 |------|------|----------|
-| 跨平台 UI 一致性 | 中 | 使用 Flutter 统一组件库 |
-| 数据同步冲突 | 高 | 设计合理的冲突解决策略 |
+| 跨平台 UI 一致性 | 中 | ✅ 使用 Flutter 统一组件库 |
+| 数据同步冲突 | 高 | 规划版本控制与冲突解决策略 |
 | OCR 识别准确率 | 中 | 支持手动修正，不依赖 OCR |
-| 用户数据隐私 | 高 | 本地加密存储，云端传输加密 |
+| 用户数据隐私 | 高 | 本地存储，云端传输加密 |
 | 电量/性能消耗 | 低 | 优化数据库查询，懒加载 |
-
----
-
-## 8. 商业模式（可选）
-
-| 版本 | 价格 | 功能 |
-|------|------|------|
-| **免费版** | ¥0 | 基础记账 + 本地统计 |
-| **专业版** | ¥18/年 | 云端同步 + OCR + 导出 |
-| **车队版** | ¥98/年 | 多车管理 + 报表 + API |
 
 ---
 
@@ -411,11 +383,11 @@ Week 4: 测试 + 打包
 
 ### 9.2 设计资源
 - Flutter 组件库：https://flutter.dev
-- 图标：Material Icons / FontAwesome
+- 图标：Material Icons
 - 配色：Material Design Color System
 
 ---
 
-*文档版本：v1.0*
-*创建日期：2026-02-28*
-*作者：CarCost 团队*
+*文档版本：v2.0*
+*更新日期：2026-03-28*
+*当前版本：v1.0.0*
