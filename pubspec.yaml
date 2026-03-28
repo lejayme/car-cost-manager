@@ -1,46 +1,42 @@
-﻿name: car_cost_manager
-description: "🚗 用车成本管理软件 - 跨平台（Android + Windows）个人用车成本记录与分析工具"
+name: car_cost_app
+description: "用车成本记录及分析软件 - 支持Windows和Android"
 publish_to: 'none'
-version: 0.1.0
+version: 1.0.0+1
 
 environment:
-  sdk: '>=3.0.0 <4.0.0'
+  sdk: ^3.11.4
 
 dependencies:
   flutter:
     sdk: flutter
-  
-  # 状态管理
-  flutter_riverpod: ^2.4.9
-  riverpod_annotation: ^2.3.3
-  
-  # 数据库
-  isar: ^3.1.0+1
-  isar_flutter_libs: ^3.1.0+1
-  path_provider: ^2.1.2
-  
+  cupertino_icons: ^1.0.8
+
+  # 数据存储
+  sqflite: ^2.3.0
+  sqflite_common_ffi: ^2.3.0
+  path_provider: ^2.1.0
+  path: ^1.8.0
+
   # 图表
   fl_chart: ^0.66.0
-  
-  # 工具
-  intl: ^0.18.1
-  uuid: ^4.3.3
-  image_picker: ^1.0.7
-  
-  # UI
-  google_fonts: ^6.1.0
-  flutter_slidable: ^3.0.1
+
+  # 状态管理
+  provider: ^6.1.0
+
+  # 国际化和日期
+  intl: ^0.18.0
+
+  # 文件操作和分享
+  share_plus: ^7.2.0
+  file_picker: ^6.1.0
+
+  # Excel导出支持
+  excel: ^4.0.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^3.0.1
-  isar_generator: ^3.1.0+1
-  build_runner: ^2.4.8
-  riverpod_generator: ^2.3.9
+  flutter_lints: ^6.0.0
 
 flutter:
   uses-material-design: true
-  
-  assets:
-    - assets/images/

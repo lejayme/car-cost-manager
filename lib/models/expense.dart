@@ -1,32 +1,57 @@
-﻿import 'package:isar/isar.dart';
-
-part 'expense.g.dart';
-
-@collection
+/// 开销记录模型
 class Expense {
-  Id id = Isar.autoIncrement;
+  final int? id;
+  final String date;
+  final String type;
+  final double amount;
+  final double mileage;
 
-  @Index()
-  int vehicleId = 0;
+  Expense({
+    this.id,
+    required this.date,
+    required this.type,
+    required this.amount,
+    required this.mileage,
+  });
 
-  @Index()
-  int categoryId = 0;
+  Map<String, dynamic> toMap() {
+    return {
+      'id': id,
+      'date': date,
+      'type': type,
+      'amount': amount,
+      'mileage': mileage,
+    };
+  }
 
-  double amount = 0.0;
-  double? mileage;
+  factory Expense.fromMap(Map<String, dynamic> map) {
+    return Expense(
+      id: map['id'] as int?,
+      date: map['date'] as String,
+      type: map['type'] as String,
+      amount: (map['amount'] as num).toDouble(),
+      mileage: (map['mileage'] as num).toDouble(),
+    );
+  }
 
-  @Index()
-  DateTime date = DateTime.now();
+  Expense copyWith({
+    int? id,
+    String? date,
+    String? type,
+    double? amount,
+    double? mileage,
+  }) {
+    return Expense(
+      id: id ?? this.id,
+      date: date ?? this.date,
+      type: type ?? this.type,
+      amount: amount ?? this.amount,
+      mileage: mileage ?? this.mileage,
+    );
+  }
 
-  String? location;
-  String? notes;
-  String? receiptImagePath;
-  String? paymentMethod;
-
-  DateTime createdAt = DateTime.now();
-  DateTime updatedAt = DateTime.now();
-
-  Expense() {
-    updatedAt = DateTime.now();
+  @override
+  String toString() {
+    return 'Expense(id: $id, date: $date, type: $type, amount: $amount, mileage: $mileage)';
   }
 }
